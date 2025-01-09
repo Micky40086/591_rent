@@ -9,8 +9,7 @@ const TOKEN = process.env.TOKEN;
 
 (async () => {
   const client = redis.createClient({
-    host: "127.0.0.1", // Redis 伺服器地址
-    port: 6379, // Redis 伺服器端口
+    url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
   });
 
   await client.connect();

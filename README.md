@@ -8,14 +8,7 @@
 
 ## 環境準備
 
-1. Node
-
-2. Redis Server
-
-3. 設定 /etc/hosts
-    ```
-    127.0.0.1 s.591.com.tw
-    ```
+1. docker && docker compose
 
 ## Setup Instructions
 
@@ -25,12 +18,7 @@
     # 591 篩選好你要的條件後把網址 URL (記得排序選最新)
     # Line Notify Token
     ```
-2. 安裝套件
+2. 執行
     ```
-    npm install
-    npx playwright install
-    ```
-3. 執行
-    ```
-    node index.js
+    docker compose up -d
     ```
