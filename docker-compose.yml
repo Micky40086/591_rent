@@ -8,6 +8,8 @@ services:
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
+    volumes:
+      - .:/app
     networks:
       - app_network
     extra_hosts:
