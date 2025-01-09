@@ -19,13 +19,11 @@
 
 ## Setup Instructions
 
-1. 設置 Line Notify Token
+1. 設置 Line Notify Token && 591 URL
     ```
-    // 用你的 Token 取代 index.js <TOKEN>
-    ```
-2. 設置 TARGET URL
-    ```
-    // 先在 591 篩選好你要的條件後把網址取代 index.js <URL>
+    cp .env.example .env
+    # 591 篩選好你要的條件後把網址 URL (記得排序選最新)
+    # Line Notify Token
     ```
 2. 安裝套件
     ```

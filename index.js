@@ -3,6 +3,10 @@ const axios = require("axios");
 const redis = require("redis");
 const intervalMinutes = 5; // 每隔 5 分鐘執行一次
 
+require('dotenv').config();
+const URL = process.env.URL;
+const TOKEN = process.env.TOKEN;
+
 (async () => {
   const client = redis.createClient({
     host: "127.0.0.1", // Redis 伺服器地址
@@ -24,9 +28,7 @@ const intervalMinutes = 5; // 每隔 5 分鐘執行一次
     const page = await context.newPage();
 
     // 瀏覽到指定頁面
-    await page.goto(
-      "<URL>",
-    );
+    await page.goto(URL);
     await page.waitForLoadState("load");
 
     const items = await page.$$("div.item");
@@ -125,7 +127,7 @@ async function sendLineNotifyMessage(message, imageUrl, linkUrl) {
       {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Bearer <TOKEN>`,
+          Authorization: `Bearer ${TOKEN}`,
         },
       },
     );
